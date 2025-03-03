@@ -1,0 +1,11 @@
+button{
+    margin: 1vh;
+}
+
+.container{
+    display: flex;
+}
+
+.settings-container{
+    margin-left: 2vw;
+}
