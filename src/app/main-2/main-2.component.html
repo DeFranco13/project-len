@@ -1,9 +1,10 @@
 <header>
-    <h1>Angular 8 Video Player Example</h1>
+    <h1>Aanpassen</h1>
     <p>Click on the "Play/Pause" button to play or pause the video.</p>
     <button routerLink="/main">Video 1</button>
     <button routerLink="/main2">Video 2</button>
     <button routerLink="/main3">Video 3</button>
+    <button (click)="notSound()">Play notification sound</button>
 </header>
 <div class="container">
     <div class="video-container">
@@ -16,30 +17,30 @@
         <p>Tijd weergeven in seconden!</p>
         <label>
             Start iteratie:
-            <input type="number" [(ngModel)]="startTime" placeholder="Start tijd">
+            <input type="number" [(ngModel)]="startTime" placeholder="Start tijd" [disabled]="displayPrompt">
         </label>
         <br>
         <label>
             Min tijd tussen iteraties:
-            <input type="number" [(ngModel)]="minTime" placeholder="Minimale tijd">
+            <input type="number" [(ngModel)]="minTime" placeholder="Minimale tijd" [disabled]="displayPrompt">
         </label>
         <br>
         <label>
             Max tijd tussen iteraties:
-            <input type="number" [(ngModel)]="maxTime" placeholder="Maximale tijd">
+            <input type="number" [(ngModel)]="maxTime" placeholder="Maximale tijd" [disabled]="displayPrompt">
         </label>
         <br>
         <label>
             Min aantal iteraties:
-            <input type="number" [(ngModel)]="minPauses" placeholder="Min aantal iteraties">
+            <input type="number" [(ngModel)]="minPauses" placeholder="Min aantal iteraties" [disabled]="displayPrompt">
         </label>
         <br>
         <label>
             Max aantal iteraties:
-            <input type="number" [(ngModel)]="maxPauses" placeholder="Max aantal iteraties">
+            <input type="number" [(ngModel)]="maxPauses" placeholder="Max aantal iteraties" [disabled]="displayPrompt">
         </label>
         <br>
-        <button (click)="playPauseVideo(myVideo)">Play/Pause</button>
+        <button (click)="playPauseVideo(myVideo)">Start</button>
     </div>
 </div>
 

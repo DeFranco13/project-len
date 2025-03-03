@@ -7,6 +7,6 @@ export const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'main', component: MainComponent},
     {path: 'main2', component: Main2Component},
-    {path: 'main3"', component: Main3Component}
+    {path: 'main3', component: Main3Component}
 
 ];
