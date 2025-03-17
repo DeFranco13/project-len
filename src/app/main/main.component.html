@@ -6,13 +6,9 @@
     <button routerLink="/main3">Video 3</button>
     <button (click)="notSound()">Play notification sound</button>
 </header>
-<div class="container">
-    <div class="video-container">
-        <video #myVideo width="1000" controls>
-            <source src="assets/vid_1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    @if (isFirstPlay){
+
+    
     <div class="settings-container">
         <p>Tijd weergeven in seconden!</p>
         <label>
@@ -39,9 +35,17 @@
             Max aantal iteraties:
             <input type="number" [(ngModel)]="maxPauses" placeholder="Max aantal iteraties" [disabled]="displayPrompt">
         </label>
-        <br>
-        <button (click)="playPauseVideo(myVideo)">Start</button>
     </div>
+}
+<div class="video-container">
+    <video #myVideo width="1300" controls>
+        <source src="assets/vid_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
+<div class="button-container">
+    <button (click)="playPauseVideo(myVideo)">Play/Pause</button>
+</div>
+
 
 

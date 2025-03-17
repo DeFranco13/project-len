@@ -33,6 +33,7 @@ export class Main3Component {
    this.pauseSound = new Audio('assets/sound.mp3');
  }
 
+
  // Load settings from TijdService
  private loadSettings(): void {
    this.startTime = this.tijdService.getStartTime();
@@ -106,24 +107,23 @@ export class Main3Component {
 
    console.log('Generated pause times:', this.pauseTimes);
 
-   // Start monitoring the video
-   this.monitorVideo(video);
+   setInterval(() => { this.monitorVideo(video);}, 1000);
  }
 
  // Helper function to get a random integer between min and max (inclusive)
  private getRandomInt(min: number, max: number): number {
    return Math.floor(Math.random() * (max - min + 1)) + min;
  }
-
+ 
  // Monitor video playback and pause at the correct moments
  private monitorVideo(video: HTMLVideoElement): void {
    video.ontimeupdate = () => {
      const currentTime = Math.floor(video.currentTime);
-
      if (this.pauseTimes.includes(currentTime) && !this.isPausedBySystem) {
        console.log('Pausing at:', currentTime);
        video.pause();
        this.isPausedBySystem = true; // Mark as system pause
+       this.pauseTimes = this.pauseTimes.filter((time) => time !== currentTime); // Remove the pause time
 
        setTimeout(() => {
          this.pauseSound.play();

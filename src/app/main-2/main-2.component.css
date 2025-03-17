@@ -9,3 +9,12 @@ button{
 .settings-container{
     margin-left: 2vw;
 }
+.video-container{
+    margin-top: 5vh;
+    text-align: center;
+}
+.button-container{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
